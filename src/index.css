@@ -1,0 +1,75 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.1 0.02 280);
+  --color-foreground: oklch(0.95 0.01 280);
+  --color-primary: oklch(1 0 0);
+  --color-primary-foreground: oklch(0.1 0.02 280);
+  --color-secondary: oklch(0.2 0.03 280);
+  --color-secondary-foreground: oklch(0.95 0.01 280);
+  --color-muted: oklch(0.15 0.02 280);
+  --color-muted-foreground: oklch(0.7 0.02 280);
+  --color-accent: oklch(0.6 0.2 280);
+  --color-accent-foreground: oklch(0.95 0.01 280);
+  --color-destructive: oklch(0.5 0.2 25);
+  --color-destructive-foreground: oklch(0.95 0.01 280);
+  --color-border: oklch(0.25 0.02 280);
+  --color-input: oklch(0.2 0.02 280);
+  --color-ring: oklch(0.6 0.2 280);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
